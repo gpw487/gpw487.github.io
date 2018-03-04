@@ -125,7 +125,7 @@
 
         function successFunction(data) {
             var allRows = data.split(/\r?\n|\r/);
-            var table = '<table>';
+            var table = '<table  class=\"search-table\">';
             for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
                 if (singleRow === 0) {
                     table += '<thead>';
@@ -158,5 +158,16 @@
             $('body').append(table);
         }
     </script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="html-table-search.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('table.search-table').tableSearch({
+                searchText: '<b>Search&nbsp;</b>',
+                searchPlaceHolder: ''
+            });
+        });
+    </script>
+    
 </body>
 </html>
